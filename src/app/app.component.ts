@@ -11,5 +11,9 @@ export class AppComponent {
     {id: 456, name: 'bar'},
     {id: 789, name: 'baz'},
   ];
-  title = 'ngb-table';
+  selectedRowsIds = [];
+
+  updateSelectedRows(rowsIds: string[]) {
+    this.selectedRowsIds = rowsIds;
+  }
 }

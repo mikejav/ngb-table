@@ -11,11 +11,11 @@ export class CheckboxComponent {
 
   @Input() checked: boolean;
   @Input() disabled = false;
-  @Output() check = new EventEmitter<boolean>();
+  @Output() checkChange = new EventEmitter<boolean>();
 
   constructor() { }
 
   toggleChecked() {
-    this.check.emit(!this.checked);
+    this.checkChange.emit(!this.checked);
   }
 }

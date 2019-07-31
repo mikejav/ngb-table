@@ -8,6 +8,9 @@
 
     <thead>
       <tr>
+        <th>
+          <ngb-checkbox [disabled]="true"></ngb-checkbox>
+        </th>
         <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
       </tr>
     </thead>
@@ -16,6 +19,9 @@
       <ng-container *ngIf="rows.length">
         <ng-container *ngFor="let row of rows">
           <tr>
+            <td>
+              <ngb-checkbox [checked]="isRowSelected(row)" (checkChange)="toggleRowSelection(row)"></ngb-checkbox>
+            </td>
             <ng-container *ngTemplateOutlet="bodyRowTemplate; context: { $implicit: row }"></ng-container>
           </tr>
         </ng-container>
@@ -28,7 +34,7 @@
     </tbody>
   
   </table>
-    
+
   <div class="card-footer" *ngIf="footerTemplate">
     <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
   </div>
