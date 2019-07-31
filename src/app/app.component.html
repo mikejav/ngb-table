@@ -1,4 +1,31 @@
-<ngb-table>
-  <ng-template ngbTableHeader>Header</ng-template>
-  <ng-template ngbTableFooter>Footer</ng-template>
-</ngb-table>
+<div class="container py-5">
+
+  <ngb-table [rows]="rows">
+    <ng-template ngbTableHeader>Header</ng-template>
+    
+    <ng-template ngbTableHead>
+      <th>foo</th>
+      <th>bar</th>
+      <th>baz</th>
+    </ng-template>
+
+    <ng-template ngbTableBodyRow let-row>
+      <td>{{ row.id }}</td>
+      <td>{{ row.name }}</td>
+      <td>empty</td>
+    </ng-template>
+
+    <ng-template ngbTableFooterRow>
+      <td colspan="3">FooterRow2</td>
+    </ng-template>
+  
+    <ng-template ngbTableFooterRow>
+      <td>FooterRow1</td>
+      <td>FooterRow1</td>
+      <td>FooterRow1</td>
+    </ng-template>
+  
+    <!-- <ng-template ngbTableFooter>Footer</ng-template> -->
+  </ngb-table>
+
+</div>

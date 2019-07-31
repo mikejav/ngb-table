@@ -1,1 +1,36 @@
-it works!!!
+<div class="card">
+
+  <div class="card-header" *ngIf="headerTemplate">
+    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+  </div>
+  
+  <table class="table m-0">
+
+    <thead>
+      <tr>
+        <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngIf="rows.length">
+        <ng-container *ngFor="let row of rows">
+          <tr>
+            <ng-container *ngTemplateOutlet="bodyRowTemplate; context: { $implicit: row }"></ng-container>
+          </tr>
+        </ng-container>
+        <ng-container *ngFor="let footerRowTemplate of footerRowTemplates">
+          <tr>
+            <ng-container *ngTemplateOutlet="footerRowTemplate.templateRef"></ng-container>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  
+  </table>
+    
+  <div class="card-footer" *ngIf="footerTemplate">
+    <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+  </div>
+
+</div>
