@@ -1,8 +1,13 @@
 <div class="container py-5">
 
   <ngb-table [rows]="rows">
-    <ng-template ngbTableHeader>Header</ng-template>
-    
+    <ng-template ngbTableHeader>
+      Header
+      <button class="btn btn-sm btn-primary my-n1 float-right">
+        foobar
+      </button>
+    </ng-template>
+
     <ng-template ngbTableHead>
       <th>foo</th>
       <th>bar</th>
@@ -18,14 +23,14 @@
     <ng-template ngbTableFooterRow>
       <td colspan="3">FooterRow2</td>
     </ng-template>
-  
+
     <ng-template ngbTableFooterRow>
       <td>FooterRow1</td>
       <td>FooterRow1</td>
       <td>FooterRow1</td>
     </ng-template>
-  
-    <!-- <ng-template ngbTableFooter>Footer</ng-template> -->
+
+    <ng-template ngbTableFooter>Footer</ng-template>
   </ngb-table>
 
 </div>
