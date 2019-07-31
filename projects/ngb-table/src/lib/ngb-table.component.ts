@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngb-table',
-  template: `
-    <p>
-      ngb-table works!
-    </p>
-  `,
+  templateUrl: './ngb-table.component.html',
   styles: []
 })
 export class NgbTableComponent implements OnInit {
