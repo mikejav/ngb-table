@@ -1,0 +1,8 @@
+<div
+  class="checkbox"
+  [ngClass]="{
+    'checked': checked,
+    'disabled': disabled
+  }"
+  (click)="disabled ? null : toggleChecked()"
+></div>

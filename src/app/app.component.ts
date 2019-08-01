@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   rows = [
     {id: 123, name: 'foo'},
     {id: 456, name: 'bar'},
     {id: 789, name: 'baz'},
   ];
-  title = 'ngb-table';
+  selectedRowsIds = [];
+
+  updateSelectedRows(rowsIds: string[]) {
+    this.selectedRowsIds = rowsIds;
+  }
 }
