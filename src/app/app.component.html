@@ -1,11 +1,20 @@
 <div class="container py-5">
 
-  <ngb-table [rows]="rows">
+  <ngb-table
+    [rows]="rows"
+    [selectable]="true"
+    [selectedRowsIds]="selectedRowsIds"
+    (selectedRowsIdsChange)="updateSelectedRows($event)"
+  >
     <ng-template ngbTableHeader>
       Header
       <button class="btn btn-sm btn-primary my-n1 float-right">
         foobar
       </button>
+    </ng-template>
+
+    <ng-template ngbTableSelectActionsHeader>
+      SelectedRowsActions
     </ng-template>
 
     <ng-template ngbTableHead>
