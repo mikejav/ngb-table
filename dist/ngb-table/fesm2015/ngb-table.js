@@ -314,5 +314,5 @@ NgbTableModule.decorators = [
             },] }
 ];
 
-export { NgbTableComponent, NgbTableModule, NgbTableHeaderDirective as ɵa, NgbTableSelectActionsHeaderDirective as ɵb, NgbTableHeadDirective as ɵc, NgbTableBodyRowDirective as ɵd, NgbTableFooterRowDirective as ɵe, NgbTableFooterDirective as ɵf, CheckboxComponent as ɵg };
+export { NgbTableModule, NgbTableComponent as ɵa, NgbTableHeaderDirective as ɵb, NgbTableSelectActionsHeaderDirective as ɵc, NgbTableHeadDirective as ɵd, NgbTableBodyRowDirective as ɵe, NgbTableFooterRowDirective as ɵf, NgbTableFooterDirective as ɵg, CheckboxComponent as ɵh };
 //# sourceMappingURL=ngb-table.js.map

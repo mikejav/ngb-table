@@ -1,24 +1,21 @@
 # NgbTable
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+Bootstrap table for Angular
 
-## Code scaffolding
+## Install
+install from npm
 
-Run `ng generate component component-name --project ngbTable` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngbTable`.
-> Note: Don't forget to add `--project ngbTable` or else it will be added to the default project in your `angular.json` file. 
+```shell
+npm install --save mikejav/
 
-## Build
+```
+or via yarn:
 
-Run `ng build ngbTable` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Publishing
+firstly import `NgbTableModule`:
+```typescript
 
-After building your library with `ng build ngbTable`, go to the dist folder `cd dist/ngb-table` and run `npm publish`.
+...
 
-## Running unit tests
-
-Run `ng test ngbTable` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```

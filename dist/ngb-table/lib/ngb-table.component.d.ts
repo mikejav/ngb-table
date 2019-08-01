@@ -10,7 +10,7 @@ export declare class NgbTableComponent implements OnInit {
     rows: Row[];
     rowIdColumnName: string;
     selectable: boolean;
-    selectedRowsIds: string[] | number[];
+    selectedRowsIds: (string | number)[];
     selectedRowsIdsChange: EventEmitter<(string | number)[]>;
     headerTemplate: NgbTableHeaderDirective;
     selectActionsHeaderTemplate: NgbTableSelectActionsHeaderDirective;

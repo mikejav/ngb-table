@@ -412,15 +412,15 @@
         return NgbTableModule;
     }());
 
-    exports.NgbTableComponent = NgbTableComponent;
     exports.NgbTableModule = NgbTableModule;
-    exports.ɵa = NgbTableHeaderDirective;
-    exports.ɵb = NgbTableSelectActionsHeaderDirective;
-    exports.ɵc = NgbTableHeadDirective;
-    exports.ɵd = NgbTableBodyRowDirective;
-    exports.ɵe = NgbTableFooterRowDirective;
-    exports.ɵf = NgbTableFooterDirective;
-    exports.ɵg = CheckboxComponent;
+    exports.ɵa = NgbTableComponent;
+    exports.ɵb = NgbTableHeaderDirective;
+    exports.ɵc = NgbTableSelectActionsHeaderDirective;
+    exports.ɵd = NgbTableHeadDirective;
+    exports.ɵe = NgbTableBodyRowDirective;
+    exports.ɵf = NgbTableFooterRowDirective;
+    exports.ɵg = NgbTableFooterDirective;
+    exports.ɵh = CheckboxComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
