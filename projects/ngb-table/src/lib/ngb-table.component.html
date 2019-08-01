@@ -1,7 +1,19 @@
-<div class="card">
+<div
+  class="card"
+  [ngClass]="{'border-primary': selectedRowsIds.length }"
+>
 
-  <div class="card-header" *ngIf="headerTemplate">
-    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+  <div
+    class="card-header"
+    [ngClass]="{'bg-primary text-light': selectedRowsIds.length}"
+    *ngIf="headerTemplate"
+  >
+    <ng-container *ngIf="selectedRowsIds.length; else noRowsSelected">
+      <ng-container *ngTemplateOutlet="selectActionsHeaderTemplate"></ng-container>
+    </ng-container>
+    <ng-template #noRowsSelected>
+      <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+    </ng-template>
   </div>
   
   <table class="table m-0">

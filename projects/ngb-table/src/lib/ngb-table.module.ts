@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NgbTableComponent } from './ngb-table.component';
 import { NgbTableHeaderDirective } from './children-selectors/ngb-table-header.directive';
-import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.directive';
-import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
+import { NgbTableSelectActionsHeaderDirective } from './children-selectors/ngb-table-select-actions-header.directive';
 import { NgbTableHeadDirective } from './children-selectors/ngb-table-head.directive';
 import { NgbTableBodyRowDirective } from './children-selectors/ngb-table-body-row.directive';
+import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.directive';
+import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 
 
@@ -14,6 +15,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
   declarations: [
     NgbTableComponent,
     NgbTableHeaderDirective,
+    NgbTableSelectActionsHeaderDirective,
     NgbTableHeadDirective,
     NgbTableBodyRowDirective,
     NgbTableFooterDirective,
@@ -27,6 +29,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
   exports: [
     NgbTableComponent,
     NgbTableHeaderDirective,
+    NgbTableSelectActionsHeaderDirective,
     NgbTableHeadDirective,
     NgbTableBodyRowDirective,
     NgbTableFooterDirective,
