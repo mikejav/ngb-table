@@ -156,6 +156,7 @@
             var _this = this;
             this.rowIdColumnName = 'id';
             this.selectable = false;
+            this.selectedRowsIds = [];
             this.selectedRowsIdsChange = new core.EventEmitter();
             this.rowTracker = (/**
              * @param {?} index
