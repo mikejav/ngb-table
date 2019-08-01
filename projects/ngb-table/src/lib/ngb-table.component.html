@@ -1,5 +1,5 @@
 <div
-  class="card"
+  class="card ngbTableRoot"
   [ngClass]="{'border-primary': selectedRowsIds.length }"
 >
   <div
@@ -14,7 +14,7 @@
       <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
     </ng-template>
   </div>
-  
+
   <table class="table m-0">
 
     <thead>
@@ -37,7 +37,7 @@
           </tr>
         </ng-container>
         <ng-container *ngFor="let footerRowTemplate of footerRowTemplates">
-          <tr>
+          <tr class="table-secondary">
             <td *ngIf="selectable"></td><!-- empty table cell to fill no checkbox space -->
             <ng-container *ngTemplateOutlet="footerRowTemplate.templateRef"></ng-container>
           </tr>
