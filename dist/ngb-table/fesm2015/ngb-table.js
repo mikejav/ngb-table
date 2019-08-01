@@ -106,6 +106,7 @@ class NgbTableComponent {
     constructor() {
         this.rowIdColumnName = 'id';
         this.selectable = false;
+        this.selectedRowsIds = [];
         this.selectedRowsIdsChange = new EventEmitter();
         this.rowTracker = (/**
          * @param {?} index

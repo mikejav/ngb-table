@@ -20,7 +20,7 @@ export class NgbTableComponent implements OnInit {
   @Input() rows: Row[];
   @Input() rowIdColumnName = 'id';
   @Input() selectable = false;
-  @Input() selectedRowsIds: (string | number)[];
+  @Input() selectedRowsIds: (string | number)[] = [];
   @Output() selectedRowsIdsChange = new EventEmitter<(string | number)[]>();
 
   /*

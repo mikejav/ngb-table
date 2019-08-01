@@ -116,6 +116,7 @@ var NgbTableComponent = /** @class */ (function () {
         var _this = this;
         this.rowIdColumnName = 'id';
         this.selectable = false;
+        this.selectedRowsIds = [];
         this.selectedRowsIdsChange = new EventEmitter();
         this.rowTracker = (/**
          * @param {?} index
