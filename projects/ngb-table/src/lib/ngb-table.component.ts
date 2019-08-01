@@ -13,6 +13,7 @@ type Row = object;
 @Component({
   selector: 'ngb-table',
   templateUrl: './ngb-table.component.html',
+  styleUrls: ['./ngb-table.component.scss']
 })
 export class NgbTableComponent implements OnInit {
 
@@ -22,7 +23,10 @@ export class NgbTableComponent implements OnInit {
   @Input() selectedRowsIds: string[] | number[];
   @Output() selectedRowsIdsChange = new EventEmitter<(string | number)[]>();
 
-  // client defined templates:
+  /*
+   * Client defined templates:
+   */
+
   @ContentChild(NgbTableHeaderDirective, { static: false, read: TemplateRef })
   headerTemplate: NgbTableHeaderDirective;
 
@@ -44,6 +48,12 @@ export class NgbTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  rowTracker = (index: any, row: Row) => {
+    const rowId = row[this.rowIdColumnName];
+
+    return rowId + this.rows.length;
   }
 
   /*
