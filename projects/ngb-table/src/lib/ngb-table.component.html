@@ -9,7 +9,7 @@
     <thead>
       <tr>
         <th>
-          <ngb-checkbox [disabled]="true"></ngb-checkbox>
+          <ngb-checkbox [checked]="areAllRowsSelected" (click)="toggleSelectAllRows()"></ngb-checkbox>
         </th>
         <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
       </tr>
@@ -18,7 +18,7 @@
     <tbody>
       <ng-container *ngIf="rows.length">
         <ng-container *ngFor="let row of rows">
-          <tr>
+          <tr [ngClass]="{'table-primary': isRowSelected(row)}">
             <td>
               <ngb-checkbox [checked]="isRowSelected(row)" (checkChange)="toggleRowSelection(row)"></ngb-checkbox>
             </td>

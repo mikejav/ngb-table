@@ -33,6 +33,10 @@ export class NgbTableComponent implements OnInit {
   ngOnInit() {
   }
 
+  /*
+   * Row selection specific methods:
+   */
+
   isRowSelected(row: Row) {
     const rowId = row[this.rowIdColumnName];
 
@@ -46,13 +50,28 @@ export class NgbTableComponent implements OnInit {
     this.selectedRowsIdsChange.emit(newSelectedRows);
   }
 
+  selectAllRows() {
+    const newSelectedRows = [];
+    this.rows.forEach(row => {
+      const rowId = row[this.rowIdColumnName];
+
+      newSelectedRows.push(rowId);
+    });
+
+    this.selectedRowsIdsChange.emit(newSelectedRows);
+  }
+
   unselectRow(row: Row) {
     const rowId = row[this.rowIdColumnName];
     const indexOfRowId = this.selectedRowsIds.indexOf(rowId);
-    this.selectedRowsIds.splice(indexOfRowId, 1);
     const newSelectedRows = [...this.selectedRowsIds];
+    newSelectedRows.splice(indexOfRowId, 1);
 
     this.selectedRowsIdsChange.emit(newSelectedRows);
+  }
+
+  unselectAllRows() {
+    this.selectedRowsIdsChange.emit([]);
   }
 
   toggleRowSelection(row: Row) {
@@ -61,5 +80,25 @@ export class NgbTableComponent implements OnInit {
     } else {
       this.selectRow(row);
     }
+  }
+
+  toggleSelectAllRows() {
+    if (this.areAllRowsSelected) {
+      this.unselectAllRows();
+    } else {
+      this.selectAllRows();
+    }
+  }
+
+  get areAllRowsSelected() {
+    let selectedRowsCount = 0;
+    this.rows.forEach(row => {
+      const rowId = row[this.rowIdColumnName];
+      if (this.selectedRowsIds.indexOf(rowId) > -1) {
+        selectedRowsCount++;
+      }
+    });
+
+    return selectedRowsCount === this.rows.length;
   }
 }
