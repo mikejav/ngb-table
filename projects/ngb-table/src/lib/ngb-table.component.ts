@@ -122,6 +122,6 @@ export class NgbTableComponent implements OnInit {
       }
     });
 
-    return selectedRowsCount === this.rows.length;
+    return selectedRowsCount === this.rows.length && this.rows.length;
   }
 }

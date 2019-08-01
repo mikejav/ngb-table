@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   rows = [
     {id: 123, name: 'foo'},
     {id: 456, name: 'bar'},

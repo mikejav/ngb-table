@@ -20,7 +20,7 @@
     <thead>
       <tr>
         <th class="w-01 align-top" *ngIf="selectable">
-          <ngb-checkbox [checked]="areAllRowsSelected" (click)="toggleSelectAllRows()"></ngb-checkbox>
+          <ngb-checkbox [checked]="areAllRowsSelected" [disabled]="!rows.length" (checkChange)="toggleSelectAllRows()"></ngb-checkbox>
         </th>
         <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
       </tr>
@@ -37,7 +37,7 @@
           </tr>
         </ng-container>
         <ng-container *ngFor="let footerRowTemplate of footerRowTemplates">
-          <tr class="table-secondary">
+          <tr>
             <td *ngIf="selectable"></td><!-- empty table cell to fill no checkbox space -->
             <ng-container *ngTemplateOutlet="footerRowTemplate.templateRef"></ng-container>
           </tr>
