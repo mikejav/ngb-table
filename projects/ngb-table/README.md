@@ -85,7 +85,7 @@ export class AppComponent {
 + </ngb-table>
 ```
 <!-- TODO: screenshot -->
-![Drag Racing](./src/documentation-images/example-simple.png)
+![Drag Racing](./documentation-images/example-simple.png)
 Maybe the above example is not so advanced but it is very simple and self-explanatory.
 The only thing that needs clarification is that the `ngbTableBodyRow` template takes the context for each row of the table in the implicit `row` variable.
 
@@ -115,7 +115,7 @@ Now let's add more stuff.
 
 </ngb-table>
 ```
-![ngbTable header](./src/documentation-images/example-header.png)
+![ngbTable header](./documentation-images/example-header.png)
 
 ### Footer
 
@@ -144,7 +144,7 @@ Now let's add more stuff.
 
 </ngb-table>
 ```
-![ngbTable footer](./src/documentation-images/example-footer.png)
+![ngbTable footer](./documentation-images/example-footer.png)
 
 ### Row footer
 ```diff
@@ -177,7 +177,7 @@ Now let's add more stuff.
 
 </ngb-table>
 ```
-![ngbTable footer row](./src/documentation-images/example-footer-row.png)
+![ngbTable footer row](./documentation-images/example-footer-row.png)
 
 You can create multiple footer rows:
 ```diff
@@ -215,7 +215,7 @@ You can create multiple footer rows:
 
 </ngb-table>
 ```
-![ngbTable multiple footer rows](./src/documentation-images/example-footer-row2.png)
+![ngbTable multiple footer rows](./documentation-images/example-footer-row2.png)
 
 ### Selected rows' action header
 ```diff
@@ -294,7 +294,7 @@ export class AppComponent {
  >
  ...
 ```
-![ngbTable row selection](./src/documentation-images/example-row-selection.png)
+![ngbTable row selection](./documentation-images/example-row-selection.png)
 Note that empty cells in footer rows have been added automatically
 
 By default ngb-table row id property name is implicitly just `id`.
@@ -306,4 +306,4 @@ If your data structure has different id filed name, specify it as `ngb-table`'s 
 ...
 ```
 If `ngbTableSelectActionsHeader` template is provided then when you select something, the `ngbTableHeader` will be replaced with `ngbTableSelectActionsHeader`
-![ngbTable row selection with actions header](./src/documentation-images/example-row-selection-with-actions-header.png)
+![ngbTable row selection with actions header](./documentation-images/example-row-selection-with-actions-header.png)
