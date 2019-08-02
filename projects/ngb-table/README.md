@@ -289,6 +289,8 @@ export class AppComponent {
  >
  ...
 ```
+<!-- TODO: image -->
+<!-- TODO: zwróź uwagę, że automatycznie dodane zostały brakujące table celle w footerach -->
 
 By default ngb-table row id property name is implicitly just `id`.
 If your data structure has different id filed name, specify it as `ngb-table`'s `rowIdColumnName` input property, e.g:

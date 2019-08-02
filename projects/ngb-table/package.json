@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "Dynamic Bootstrap table for Angular",
   "author": "Michał Jaworski",
+  "repository": "https://github.com/mikejav/ngb-table",
   "keywords": ["angular", "bootstrap", "table", "typescript"],
   "license": "MIT",
   "peerDependencies": {
