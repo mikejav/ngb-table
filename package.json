@@ -1,13 +1,14 @@
 {
   "name": "ngb-table",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish": "./scripts/build-and-publish.sh"
   },
   "private": true,
   "dependencies": {
