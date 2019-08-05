@@ -1,6 +1,6 @@
 import { Directive, TemplateRef, Component, Input, Output, ContentChild, ContentChildren, EventEmitter, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { __spread } from 'tslib';
+import { CommonModule } from '@angular/common';
 
 /**
  * @fileoverview added by tsickle
@@ -357,7 +357,7 @@ var NgbTableModule = /** @class */ (function () {
                         CheckboxComponent,
                     ],
                     imports: [
-                        BrowserModule,
+                        CommonModule,
                     ],
                     exports: [
                         NgbTableComponent,

@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser')) :
-    typeof define === 'function' && define.amd ? define('ngb-table', ['exports', '@angular/core', '@angular/platform-browser'], factory) :
-    (global = global || self, factory(global['ngb-table'] = {}, global.ng.core, global.ng.platformBrowser));
-}(this, function (exports, core, platformBrowser) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common')) :
+    typeof define === 'function' && define.amd ? define('ngb-table', ['exports', '@angular/core', '@angular/common'], factory) :
+    (global = global || self, factory(global['ngb-table'] = {}, global.ng.core, global.ng.common));
+}(this, function (exports, core, common) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -397,7 +397,7 @@
                             CheckboxComponent,
                         ],
                         imports: [
-                            platformBrowser.BrowserModule,
+                            common.CommonModule,
                         ],
                         exports: [
                             NgbTableComponent,
