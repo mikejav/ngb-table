@@ -1,5 +1,5 @@
 import { Directive, TemplateRef, EventEmitter, Component, Input, Output, ContentChild, ContentChildren, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 /**
  * @fileoverview added by tsickle
@@ -301,7 +301,7 @@ NgbTableModule.decorators = [
                     CheckboxComponent,
                 ],
                 imports: [
-                    BrowserModule,
+                    CommonModule,
                 ],
                 exports: [
                     NgbTableComponent,
