@@ -9,6 +9,7 @@ import { NgbTableBodyRowDirective } from './children-selectors/ngb-table-body-ro
 import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.directive';
 import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     CheckboxComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
   ],
   exports: [
     NgbTableComponent,
