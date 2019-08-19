@@ -7,7 +7,7 @@
   "keywords": ["angular", "bootstrap", "table", "typescript"],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^8.1.3",
-    "@angular/core": "^8.1.3"
+    "@angular/common": "^8.2.2",
+    "@angular/core": "^8.2.2"
   }
 }
