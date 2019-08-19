@@ -12,7 +12,7 @@ Bootstrap table for Angular
   ```shell
   npm install --save bootstrap
   ```
-  then add Twitter Bootstrap styles to your global `style.scss` file:
+  then add Bootstrap styles to your global `style.scss` file:
   ```scss
   @import '~bootstrap/dist/css/bootstrap.min.css';
   ```
@@ -138,7 +138,7 @@ Now let's add more stuff.
   </ng-template>
 
 + <ng-template ngbTableFooter>
-+   For more information, please contact us directry...
++   For more information, please contact us directly...
 + </ng-template>
 
 </ngb-table>
@@ -171,7 +171,7 @@ Now let's add more stuff.
 + </ng-template>
 
   <ng-template ngbTableFooter>
-    For more information, please contact us directry...
+    For more information, please contact us directly...
   </ng-template>
 
 </ngb-table>
@@ -209,7 +209,7 @@ You can create multiple footer rows:
 + </ng-template>
 
   <ng-template ngbTableFooter>
-    For more information, please contact us directry...
+    For more information, please contact us directly...
   </ng-template>
 
 </ngb-table>
@@ -251,7 +251,7 @@ You can create multiple footer rows:
   </ng-template>
 
   <ng-template ngbTableFooter>
-    For more information, please contact us directry...
+    For more information, please contact us directly...
   </ng-template>
 
 </ngb-table>
