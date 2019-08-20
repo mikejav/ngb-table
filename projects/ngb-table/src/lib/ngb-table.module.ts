@@ -10,12 +10,14 @@ import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.d
 import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
+import { NgbTableSubheaderDirective } from './children-selectors/ngb-table-subheader.directive';
 
 
 @NgModule({
   declarations: [
     NgbTableComponent,
     NgbTableHeaderDirective,
+    NgbTableSubheaderDirective,
     NgbTableSelectActionsHeaderDirective,
     NgbTableHeadDirective,
     NgbTableBodyRowDirective,
@@ -23,6 +25,7 @@ import { CommonModule } from '@angular/common';
     NgbTableFooterRowDirective,
 
     CheckboxComponent,
+
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { CommonModule } from '@angular/common';
   exports: [
     NgbTableComponent,
     NgbTableHeaderDirective,
+    NgbTableSubheaderDirective,
     NgbTableSelectActionsHeaderDirective,
     NgbTableHeadDirective,
     NgbTableBodyRowDirective,

@@ -9,6 +9,12 @@
     </ng-template>
   </div>
 
+  <ng-container *ngFor="let subHeaderTemplate of subheaderTemplates">
+    <div class="card-header">
+      <ng-container *ngTemplateOutlet="subHeaderTemplate.templateRef"></ng-container>
+    </div>
+  </ng-container>
+
   <table class="table table-responsive m-0">
 
     <thead>

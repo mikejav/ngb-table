@@ -1,4 +1,6 @@
-import { Component, OnInit, ContentChild, TemplateRef, ContentChildren, QueryList, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component, OnInit, ContentChild, TemplateRef, ContentChildren, QueryList, Input, Output, EventEmitter
+} from '@angular/core';
 
 import { NgbTableHeaderDirective } from './children-selectors/ngb-table-header.directive';
 import { NgbTableSelectActionsHeaderDirective } from './children-selectors/ngb-table-select-actions-header.directive';
@@ -6,6 +8,7 @@ import { NgbTableHeadDirective } from './children-selectors/ngb-table-head.direc
 import { NgbTableBodyRowDirective } from './children-selectors/ngb-table-body-row.directive';
 import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
 import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.directive';
+import { NgbTableSubheaderDirective } from 'projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive';
 
 
 type Row = object;
@@ -29,6 +32,9 @@ export class NgbTableComponent implements OnInit {
 
   @ContentChild(NgbTableHeaderDirective, { static: false, read: TemplateRef })
   headerTemplate: NgbTableHeaderDirective;
+
+  @ContentChildren(NgbTableSubheaderDirective, { descendants: false })
+  subheaderTemplates: QueryList<NgbTableSubheaderDirective>;
 
   @ContentChild(NgbTableSelectActionsHeaderDirective, { static: false, read: TemplateRef })
   selectActionsHeaderTemplate: NgbTableSelectActionsHeaderDirective;
