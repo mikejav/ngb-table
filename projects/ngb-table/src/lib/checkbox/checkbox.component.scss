@@ -13,10 +13,9 @@
     content: '';
     width: 6px;
     height: 11px;
-    border-bottom: 2px solid var(--white);
-    border-right: 2px solid var(--white);
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
     transform: rotate(45deg);
-    transition: .3s;
   }
 
   &:hover:not(.disabled) {
@@ -28,6 +27,11 @@
     border-color: var(--primary);
     background: var(--primary);
     opacity: 1;
+
+    &:after {
+      border-bottom-color: var(--white);
+      border-right-color: var(--white);
+    }
   }
 
   &.disabled {
