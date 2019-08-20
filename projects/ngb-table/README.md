@@ -307,3 +307,13 @@ If your data structure has different id filed name, specify it as `ngb-table`'s 
 ```
 If `ngbTableSelectActionsHeader` template is provided then when you select something, the `ngbTableHeader` will be replaced with `ngbTableSelectActionsHeader`
 ![ngbTable row selection with actions header](https://raw.githubusercontent.com/mikejav/ngb-table/master/projects/ngb-table/documentation-images/example-row-selection-with-actions-header.png)
+
+## Aditional templates
+
+### Subheader
+Appears under `ngbTableHeader`. Is not replaced by `ngbTableSelectActionsHeader` when when rows are selected. Can be used multiple times.
+```html
+<ng-template ngbTableSubheader>
+  SubHeader
+</ng-template>
+```
