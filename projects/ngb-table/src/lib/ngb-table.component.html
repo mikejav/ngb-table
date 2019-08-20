@@ -1,12 +1,6 @@
-<div
-  class="card ngbTableRoot"
-  [ngClass]="{'border-primary': selectedRowsIds.length }"
->
-  <div
-    class="card-header"
-    [ngClass]="{'bg-primary text-light': selectedRowsIds.length && selectActionsHeaderTemplate}"
-    *ngIf="headerTemplate"
-  >
+<div class="card ngbTableRoot" [ngClass]="{'border-primary': selectedRowsIds.length }">
+  <div class="card-header" [ngClass]="{'bg-primary text-light': selectedRowsIds.length && selectActionsHeaderTemplate}"
+    *ngIf="headerTemplate">
     <ng-container *ngIf="selectedRowsIds.length && selectActionsHeaderTemplate; else noRowsSelected">
       <ng-container *ngTemplateOutlet="selectActionsHeaderTemplate"></ng-container>
     </ng-container>
@@ -20,7 +14,8 @@
     <thead>
       <tr>
         <th class="w-01 align-top" *ngIf="selectable">
-          <ngb-checkbox [checked]="areAllRowsSelected" [disabled]="!rows.length" (checkChange)="toggleSelectAllRows()"></ngb-checkbox>
+          <ngb-checkbox [checked]="areAllRowsSelected" [disabled]="!rows.length" (checkChange)="toggleSelectAllRows()">
+          </ngb-checkbox>
         </th>
         <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
       </tr>
@@ -44,7 +39,7 @@
         </ng-container>
       </ng-container>
     </tbody>
-  
+
   </table>
 
   <div class="card-footer" *ngIf="footerTemplate">
