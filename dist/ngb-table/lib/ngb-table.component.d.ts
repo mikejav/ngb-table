@@ -5,6 +5,7 @@ import { NgbTableHeadDirective } from './children-selectors/ngb-table-head.direc
 import { NgbTableBodyRowDirective } from './children-selectors/ngb-table-body-row.directive';
 import { NgbTableFooterRowDirective } from './children-selectors/ngb-table-footer-row.directive';
 import { NgbTableFooterDirective } from './children-selectors/ngb-table-footer.directive';
+import { NgbTableSubheaderDirective } from 'projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive';
 declare type Row = object;
 export declare class NgbTableComponent implements OnInit {
     rows: Row[];
@@ -13,6 +14,7 @@ export declare class NgbTableComponent implements OnInit {
     selectedRowsIds: (string | number)[];
     selectedRowsIdsChange: EventEmitter<(string | number)[]>;
     headerTemplate: NgbTableHeaderDirective;
+    subheaderTemplates: QueryList<NgbTableSubheaderDirective>;
     selectActionsHeaderTemplate: NgbTableSelectActionsHeaderDirective;
     headTemplate: NgbTableHeadDirective;
     bodyRowTemplate: NgbTableBodyRowDirective;

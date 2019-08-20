@@ -1,6 +1,6 @@
 {
   "name": "ngb-table",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "Dynamic Bootstrap table for Angular",
   "author": "Michał Jaworski",
   "repository": "https://github.com/mikejav/ngb-table",
@@ -12,8 +12,8 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^8.1.3",
-    "@angular/core": "^8.1.3"
+    "@angular/common": "^8.2.2",
+    "@angular/core": "^8.2.2"
   },
   "main": "bundles/ngb-table.umd.js",
   "module": "fesm5/ngb-table.js",

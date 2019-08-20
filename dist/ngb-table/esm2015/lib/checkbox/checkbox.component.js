@@ -20,7 +20,7 @@ CheckboxComponent.decorators = [
                 selector: 'ngb-checkbox',
                 template: "<div\n  class=\"checkbox\"\n  [ngClass]=\"{\n    'checked': checked,\n    'disabled': disabled\n  }\"\n  (click)=\"disabled ? null : toggleChecked()\"\n></div>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                styles: [".checkbox{position:relative;width:22px;height:22px;border:2px solid var(--secondary);opacity:.7;border-radius:3px}.checkbox:after{position:absolute;top:3px;left:6px;content:\"\";width:6px;height:11px;border-bottom:2px solid var(--white);border-right:2px solid var(--white);-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition:.3s;transition:.3s}.checkbox:hover:not(.disabled){opacity:1;cursor:pointer}.checkbox.checked{border-color:var(--primary);background:var(--primary);opacity:1}.checkbox.disabled{opacity:.5}"]
+                styles: [".checkbox{position:relative;width:22px;height:22px;border:2px solid var(--secondary);opacity:.7;border-radius:3px}.checkbox:after{position:absolute;top:3px;left:6px;content:\"\";width:6px;height:11px;border-bottom:2px solid transparent;border-right:2px solid transparent;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.checkbox:hover:not(.disabled){opacity:1;cursor:pointer}.checkbox.checked{border-color:var(--primary);background:var(--primary);opacity:1}.checkbox.checked:after{border-bottom-color:var(--white);border-right-color:var(--white)}.checkbox.disabled{opacity:.5}"]
             }] }
 ];
 /** @nocollapse */
