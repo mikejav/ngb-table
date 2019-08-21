@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive'), require('@angular/common')) :
-    typeof define === 'function' && define.amd ? define('ngb-table', ['exports', '@angular/core', 'projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive', '@angular/common'], factory) :
-    (global = global || self, factory(global['ngb-table'] = {}, global.ng.core, global.ngbTableSubheader_directive, global.ng.common));
-}(this, function (exports, core, ngbTableSubheader_directive, common) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common')) :
+    typeof define === 'function' && define.amd ? define('ngb-table', ['exports', '@angular/core', '@angular/common'], factory) :
+    (global = global || self, factory(global['ngb-table'] = {}, global.ng.core, global.ng.common));
+}(this, function (exports, core, common) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -57,6 +57,26 @@
         /** @nocollapse */
         NgbTableHeaderDirective.ctorParameters = function () { return []; };
         return NgbTableHeaderDirective;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var NgbTableSubheaderDirective = /** @class */ (function () {
+        function NgbTableSubheaderDirective(templateRef) {
+            this.templateRef = templateRef;
+        }
+        NgbTableSubheaderDirective.decorators = [
+            { type: core.Directive, args: [{
+                        selector: '[ngbTableSubheader]'
+                    },] }
+        ];
+        /** @nocollapse */
+        NgbTableSubheaderDirective.ctorParameters = function () { return [
+            { type: core.TemplateRef }
+        ]; };
+        return NgbTableSubheaderDirective;
     }());
 
     /**
@@ -332,7 +352,7 @@
             selectedRowsIds: [{ type: core.Input }],
             selectedRowsIdsChange: [{ type: core.Output }],
             headerTemplate: [{ type: core.ContentChild, args: [NgbTableHeaderDirective, { static: false, read: core.TemplateRef },] }],
-            subheaderTemplates: [{ type: core.ContentChildren, args: [ngbTableSubheader_directive.NgbTableSubheaderDirective, { descendants: false },] }],
+            subheaderTemplates: [{ type: core.ContentChildren, args: [NgbTableSubheaderDirective, { descendants: false },] }],
             selectActionsHeaderTemplate: [{ type: core.ContentChild, args: [NgbTableSelectActionsHeaderDirective, { static: false, read: core.TemplateRef },] }],
             headTemplate: [{ type: core.ContentChild, args: [NgbTableHeadDirective, { static: false, read: core.TemplateRef },] }],
             bodyRowTemplate: [{ type: core.ContentChild, args: [NgbTableBodyRowDirective, { static: false, read: core.TemplateRef },] }],
@@ -382,26 +402,6 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
-    var NgbTableSubheaderDirective = /** @class */ (function () {
-        function NgbTableSubheaderDirective(templateRef) {
-            this.templateRef = templateRef;
-        }
-        NgbTableSubheaderDirective.decorators = [
-            { type: core.Directive, args: [{
-                        selector: '[ngbTableSubheader]'
-                    },] }
-        ];
-        /** @nocollapse */
-        NgbTableSubheaderDirective.ctorParameters = function () { return [
-            { type: core.TemplateRef }
-        ]; };
-        return NgbTableSubheaderDirective;
-    }());
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
     var NgbTableModule = /** @class */ (function () {
         function NgbTableModule() {
         }
@@ -439,12 +439,12 @@
     exports.NgbTableModule = NgbTableModule;
     exports.ɵa = NgbTableComponent;
     exports.ɵb = NgbTableHeaderDirective;
-    exports.ɵc = NgbTableSelectActionsHeaderDirective;
-    exports.ɵd = NgbTableHeadDirective;
-    exports.ɵe = NgbTableBodyRowDirective;
-    exports.ɵf = NgbTableFooterRowDirective;
-    exports.ɵg = NgbTableFooterDirective;
-    exports.ɵh = NgbTableSubheaderDirective;
+    exports.ɵc = NgbTableSubheaderDirective;
+    exports.ɵd = NgbTableSelectActionsHeaderDirective;
+    exports.ɵe = NgbTableHeadDirective;
+    exports.ɵf = NgbTableBodyRowDirective;
+    exports.ɵg = NgbTableFooterRowDirective;
+    exports.ɵh = NgbTableFooterDirective;
     exports.ɵi = CheckboxComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });

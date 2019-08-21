@@ -1,7 +1,6 @@
 import { Directive, TemplateRef, Component, Input, Output, ContentChild, ContentChildren, EventEmitter, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { __spread } from 'tslib';
-import { NgbTableSubheaderDirective as NgbTableSubheaderDirective$1 } from 'projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive';
 import { CommonModule } from '@angular/common';
+import { __spread } from 'tslib';
 
 /**
  * @fileoverview added by tsickle
@@ -18,6 +17,26 @@ var NgbTableHeaderDirective = /** @class */ (function () {
     /** @nocollapse */
     NgbTableHeaderDirective.ctorParameters = function () { return []; };
     return NgbTableHeaderDirective;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var NgbTableSubheaderDirective = /** @class */ (function () {
+    function NgbTableSubheaderDirective(templateRef) {
+        this.templateRef = templateRef;
+    }
+    NgbTableSubheaderDirective.decorators = [
+        { type: Directive, args: [{
+                    selector: '[ngbTableSubheader]'
+                },] }
+    ];
+    /** @nocollapse */
+    NgbTableSubheaderDirective.ctorParameters = function () { return [
+        { type: TemplateRef }
+    ]; };
+    return NgbTableSubheaderDirective;
 }());
 
 /**
@@ -293,7 +312,7 @@ var NgbTableComponent = /** @class */ (function () {
         selectedRowsIds: [{ type: Input }],
         selectedRowsIdsChange: [{ type: Output }],
         headerTemplate: [{ type: ContentChild, args: [NgbTableHeaderDirective, { static: false, read: TemplateRef },] }],
-        subheaderTemplates: [{ type: ContentChildren, args: [NgbTableSubheaderDirective$1, { descendants: false },] }],
+        subheaderTemplates: [{ type: ContentChildren, args: [NgbTableSubheaderDirective, { descendants: false },] }],
         selectActionsHeaderTemplate: [{ type: ContentChild, args: [NgbTableSelectActionsHeaderDirective, { static: false, read: TemplateRef },] }],
         headTemplate: [{ type: ContentChild, args: [NgbTableHeadDirective, { static: false, read: TemplateRef },] }],
         bodyRowTemplate: [{ type: ContentChild, args: [NgbTableBodyRowDirective, { static: false, read: TemplateRef },] }],
@@ -343,26 +362,6 @@ var CheckboxComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var NgbTableSubheaderDirective = /** @class */ (function () {
-    function NgbTableSubheaderDirective(templateRef) {
-        this.templateRef = templateRef;
-    }
-    NgbTableSubheaderDirective.decorators = [
-        { type: Directive, args: [{
-                    selector: '[ngbTableSubheader]'
-                },] }
-    ];
-    /** @nocollapse */
-    NgbTableSubheaderDirective.ctorParameters = function () { return [
-        { type: TemplateRef }
-    ]; };
-    return NgbTableSubheaderDirective;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var NgbTableModule = /** @class */ (function () {
     function NgbTableModule() {
     }
@@ -397,5 +396,5 @@ var NgbTableModule = /** @class */ (function () {
     return NgbTableModule;
 }());
 
-export { NgbTableModule, NgbTableComponent as ɵa, NgbTableHeaderDirective as ɵb, NgbTableSelectActionsHeaderDirective as ɵc, NgbTableHeadDirective as ɵd, NgbTableBodyRowDirective as ɵe, NgbTableFooterRowDirective as ɵf, NgbTableFooterDirective as ɵg, NgbTableSubheaderDirective as ɵh, CheckboxComponent as ɵi };
+export { NgbTableModule, NgbTableComponent as ɵa, NgbTableHeaderDirective as ɵb, NgbTableSubheaderDirective as ɵc, NgbTableSelectActionsHeaderDirective as ɵd, NgbTableHeadDirective as ɵe, NgbTableBodyRowDirective as ɵf, NgbTableFooterRowDirective as ɵg, NgbTableFooterDirective as ɵh, CheckboxComponent as ɵi };
 //# sourceMappingURL=ngb-table.js.map

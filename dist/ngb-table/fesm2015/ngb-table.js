@@ -1,5 +1,4 @@
 import { Directive, TemplateRef, EventEmitter, Component, Input, Output, ContentChild, ContentChildren, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { NgbTableSubheaderDirective as NgbTableSubheaderDirective$1 } from 'projects/ngb-table/src/lib/children-selectors/ngb-table-subheader.directive';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -16,6 +15,28 @@ NgbTableHeaderDirective.decorators = [
 ];
 /** @nocollapse */
 NgbTableHeaderDirective.ctorParameters = () => [];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class NgbTableSubheaderDirective {
+    /**
+     * @param {?} templateRef
+     */
+    constructor(templateRef) {
+        this.templateRef = templateRef;
+    }
+}
+NgbTableSubheaderDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[ngbTableSubheader]'
+            },] }
+];
+/** @nocollapse */
+NgbTableSubheaderDirective.ctorParameters = () => [
+    { type: TemplateRef }
+];
 
 /**
  * @fileoverview added by tsickle
@@ -244,7 +265,7 @@ NgbTableComponent.propDecorators = {
     selectedRowsIds: [{ type: Input }],
     selectedRowsIdsChange: [{ type: Output }],
     headerTemplate: [{ type: ContentChild, args: [NgbTableHeaderDirective, { static: false, read: TemplateRef },] }],
-    subheaderTemplates: [{ type: ContentChildren, args: [NgbTableSubheaderDirective$1, { descendants: false },] }],
+    subheaderTemplates: [{ type: ContentChildren, args: [NgbTableSubheaderDirective, { descendants: false },] }],
     selectActionsHeaderTemplate: [{ type: ContentChild, args: [NgbTableSelectActionsHeaderDirective, { static: false, read: TemplateRef },] }],
     headTemplate: [{ type: ContentChild, args: [NgbTableHeadDirective, { static: false, read: TemplateRef },] }],
     bodyRowTemplate: [{ type: ContentChild, args: [NgbTableBodyRowDirective, { static: false, read: TemplateRef },] }],
@@ -288,28 +309,6 @@ CheckboxComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class NgbTableSubheaderDirective {
-    /**
-     * @param {?} templateRef
-     */
-    constructor(templateRef) {
-        this.templateRef = templateRef;
-    }
-}
-NgbTableSubheaderDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[ngbTableSubheader]'
-            },] }
-];
-/** @nocollapse */
-NgbTableSubheaderDirective.ctorParameters = () => [
-    { type: TemplateRef }
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 class NgbTableModule {
 }
 NgbTableModule.decorators = [
@@ -341,5 +340,5 @@ NgbTableModule.decorators = [
             },] }
 ];
 
-export { NgbTableModule, NgbTableComponent as ɵa, NgbTableHeaderDirective as ɵb, NgbTableSelectActionsHeaderDirective as ɵc, NgbTableHeadDirective as ɵd, NgbTableBodyRowDirective as ɵe, NgbTableFooterRowDirective as ɵf, NgbTableFooterDirective as ɵg, NgbTableSubheaderDirective as ɵh, CheckboxComponent as ɵi };
+export { NgbTableModule, NgbTableComponent as ɵa, NgbTableHeaderDirective as ɵb, NgbTableSubheaderDirective as ɵc, NgbTableSelectActionsHeaderDirective as ɵd, NgbTableHeadDirective as ɵe, NgbTableBodyRowDirective as ɵf, NgbTableFooterRowDirective as ɵg, NgbTableFooterDirective as ɵh, CheckboxComponent as ɵi };
 //# sourceMappingURL=ngb-table.js.map
