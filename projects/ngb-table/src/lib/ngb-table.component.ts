@@ -131,6 +131,6 @@ export class NgbTableComponent implements OnInit {
     });
     const selectableRows = this.rows.filter(this.canSelectRowPredicate);
 
-    return selectedRowsCount === selectableRows.length && this.rows.length;
+    return selectedRowsCount === selectableRows.length && selectableRows.length;
   }
 }
