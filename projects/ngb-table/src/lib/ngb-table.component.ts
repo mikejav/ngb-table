@@ -79,12 +79,14 @@ export class NgbTableComponent implements OnInit {
     this.selectedRowsIdsChange.emit(newSelectedRows);
   }
 
-  selectAllRows() {
+  private selectAllSelectableRows() {
     const newSelectedRows = [];
     this.rows.forEach(row => {
       const rowId = row[this.rowIdColumnName];
 
-      newSelectedRows.push(rowId);
+      if (this.canSelectRowPredicate(row)) {
+        newSelectedRows.push(rowId);
+      }
     });
 
     this.selectedRowsIdsChange.emit(newSelectedRows);
@@ -115,7 +117,7 @@ export class NgbTableComponent implements OnInit {
     if (this.areAllSelectableRowsSelected) {
       this.unselectAllRows();
     } else {
-      this.selectAllRows();
+      this.selectAllSelectableRows();
     }
   }
 
@@ -127,7 +129,6 @@ export class NgbTableComponent implements OnInit {
         selectedRowsCount++;
       }
     });
-
     const selectableRows = this.rows.filter(this.canSelectRowPredicate);
 
     return selectedRowsCount === selectableRows.length && this.rows.length;

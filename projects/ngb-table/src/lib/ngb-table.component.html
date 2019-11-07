@@ -20,7 +20,7 @@
     <thead>
       <tr>
         <th class="w-01 align-top" *ngIf="selectable">
-          <ngb-checkbox [checked]="areAllRowsSelected" [disabled]="!rows.length" (checkChange)="toggleSelectAllRows()">
+          <ngb-checkbox [checked]="areAllSelectableRowsSelected" [disabled]="!rows.length" (checkChange)="toggleSelectAllRows()">
           </ngb-checkbox>
         </th>
         <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
