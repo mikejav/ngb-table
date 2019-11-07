@@ -4,6 +4,7 @@
     [rows]="rows"
     [selectable]="true"
     [selectedRowsIds]="selectedRowsIds"
+    [canSelectRowPredicate]="onlyNameBarPredicate"
     (selectedRowsIdsChange)="updateSelectedRows($event)"
   >
     <ng-template ngbTableHeader>

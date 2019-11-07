@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Predicate } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,10 @@ export class AppComponent {
     {id: 789, name: 'baz', qux: 'lorem ipsum dolor'},
   ];
   selectedRowsIds = [];
+
+  onlyNameBarPredicate: Predicate<any> = (row) => {
+    return row.name === 'bar';
+  }
 
   updateSelectedRows(rowsIds: string[]) {
     this.selectedRowsIds = rowsIds;

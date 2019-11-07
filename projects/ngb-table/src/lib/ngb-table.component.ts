@@ -1,7 +1,6 @@
 import {
-  Component, OnInit, ContentChild, TemplateRef, ContentChildren, QueryList, Input, Output, EventEmitter
+  Component, OnInit, ContentChild, TemplateRef, ContentChildren, QueryList, Input, Output, EventEmitter, Predicate
 } from '@angular/core';
-
 import { NgbTableHeaderDirective } from './children-selectors/ngb-table-header.directive';
 import { NgbTableSubheaderDirective } from './children-selectors/ngb-table-subheader.directive';
 import { NgbTableSelectActionsHeaderDirective } from './children-selectors/ngb-table-select-actions-header.directive';
@@ -23,6 +22,7 @@ export class NgbTableComponent implements OnInit {
   @Input() rows: Row[];
   @Input() rowIdColumnName = 'id';
   @Input() selectable = false;
+  @Input() canSelectRowPredicate: Predicate<Row>;
   @Input() selectedRowsIds: (string | number)[] = [];
   @Output() selectedRowsIdsChange = new EventEmitter<(string | number)[]>();
 
@@ -112,14 +112,14 @@ export class NgbTableComponent implements OnInit {
   }
 
   toggleSelectAllRows() {
-    if (this.areAllRowsSelected) {
+    if (this.areAllSelectableRowsSelected) {
       this.unselectAllRows();
     } else {
       this.selectAllRows();
     }
   }
 
-  get areAllRowsSelected() {
+  get areAllSelectableRowsSelected() {
     let selectedRowsCount = 0;
     this.rows.forEach(row => {
       const rowId = row[this.rowIdColumnName];
@@ -128,6 +128,8 @@ export class NgbTableComponent implements OnInit {
       }
     });
 
-    return selectedRowsCount === this.rows.length && this.rows.length;
+    const selectableRows = this.rows.filter(this.canSelectRowPredicate);
+
+    return selectedRowsCount === selectableRows.length && this.rows.length;
   }
 }

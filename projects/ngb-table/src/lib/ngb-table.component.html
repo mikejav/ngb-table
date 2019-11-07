@@ -32,7 +32,11 @@
         <ng-container *ngFor="let row of rows; trackBy: rowTracker">
           <tr [ngClass]="{'table-primary': isRowSelected(row)}">
             <td class="align-middle" *ngIf="selectable">
-              <ngb-checkbox [checked]="isRowSelected(row)" (checkChange)="toggleRowSelection(row)"></ngb-checkbox>
+              <ngb-checkbox
+                [disabled]="!canSelectRowPredicate(row)"
+                [checked]="isRowSelected(row)"
+                (checkChange)="toggleRowSelection(row)"
+              ></ngb-checkbox>
             </td>
             <ng-container *ngTemplateOutlet="bodyRowTemplate; context: { $implicit: row }"></ng-container>
           </tr>
