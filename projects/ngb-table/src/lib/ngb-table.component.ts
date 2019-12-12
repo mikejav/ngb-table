@@ -22,7 +22,6 @@ export class NgbTableComponent implements OnInit {
   @Input() rows: Row[];
   @Input() rowIdColumnName = 'id';
   @Input() selectable = false;
-  @Input() canSelectRowPredicate: Predicate<Row>;
   @Input() selectedRowsIds: (string | number)[] = [];
   @Output() selectedRowsIdsChange = new EventEmitter<(string | number)[]>();
 
@@ -50,6 +49,8 @@ export class NgbTableComponent implements OnInit {
 
   @ContentChild(NgbTableFooterDirective, { static: false, read: TemplateRef })
   footerTemplate: NgbTableFooterDirective;
+
+  @Input() canSelectRowPredicate: Predicate<Row> = () => true;
 
   constructor() { }
 
