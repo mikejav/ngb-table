@@ -178,6 +178,10 @@
             this.selectable = false;
             this.selectedRowsIds = [];
             this.selectedRowsIdsChange = new core.EventEmitter();
+            this.canSelectRowPredicate = (/**
+             * @return {?}
+             */
+            function () { return true; });
             this.rowTracker = (/**
              * @param {?} index
              * @param {?} row
@@ -235,9 +239,11 @@
             this.selectedRowsIdsChange.emit(newSelectedRows);
         };
         /**
+         * @private
          * @return {?}
          */
-        NgbTableComponent.prototype.selectAllRows = /**
+        NgbTableComponent.prototype.selectAllSelectableRows = /**
+         * @private
          * @return {?}
          */
         function () {
@@ -251,7 +257,9 @@
             function (row) {
                 /** @type {?} */
                 var rowId = row[_this.rowIdColumnName];
-                newSelectedRows.push(rowId);
+                if (_this.canSelectRowPredicate(row)) {
+                    newSelectedRows.push(rowId);
+                }
             }));
             this.selectedRowsIdsChange.emit(newSelectedRows);
         };
@@ -305,14 +313,14 @@
          * @return {?}
          */
         function () {
-            if (this.areAllRowsSelected) {
+            if (this.areAllSelectableRowsSelected) {
                 this.unselectAllRows();
             }
             else {
-                this.selectAllRows();
+                this.selectAllSelectableRows();
             }
         };
-        Object.defineProperty(NgbTableComponent.prototype, "areAllRowsSelected", {
+        Object.defineProperty(NgbTableComponent.prototype, "areAllSelectableRowsSelected", {
             get: /**
              * @return {?}
              */
@@ -331,7 +339,9 @@
                         selectedRowsCount++;
                     }
                 }));
-                return selectedRowsCount === this.rows.length && this.rows.length;
+                /** @type {?} */
+                var selectableRows = this.rows.filter(this.canSelectRowPredicate);
+                return selectedRowsCount === selectableRows.length && selectableRows.length;
             },
             enumerable: true,
             configurable: true
@@ -339,7 +349,7 @@
         NgbTableComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'ngb-table',
-                        template: "<div class=\"card ngbTableRoot\" [ngClass]=\"{'border-primary': selectedRowsIds.length }\">\n  <div class=\"card-header\" [ngClass]=\"{'bg-primary text-light': selectedRowsIds.length && selectActionsHeaderTemplate}\"\n    *ngIf=\"headerTemplate\">\n    <ng-container *ngIf=\"selectedRowsIds.length && selectActionsHeaderTemplate; else noRowsSelected\">\n      <ng-container *ngTemplateOutlet=\"selectActionsHeaderTemplate\"></ng-container>\n    </ng-container>\n    <ng-template #noRowsSelected>\n      <ng-container *ngTemplateOutlet=\"headerTemplate\"></ng-container>\n    </ng-template>\n  </div>\n\n  <ng-container *ngFor=\"let subHeaderTemplate of subheaderTemplates\">\n    <div class=\"card-header\">\n      <ng-container *ngTemplateOutlet=\"subHeaderTemplate.templateRef\"></ng-container>\n    </div>\n  </ng-container>\n\n  <table class=\"table table-responsive m-0\">\n\n    <thead>\n      <tr>\n        <th class=\"w-01 align-top\" *ngIf=\"selectable\">\n          <ngb-checkbox [checked]=\"areAllRowsSelected\" [disabled]=\"!rows.length\" (checkChange)=\"toggleSelectAllRows()\">\n          </ngb-checkbox>\n        </th>\n        <ng-container *ngTemplateOutlet=\"headTemplate\"></ng-container>\n      </tr>\n    </thead>\n\n    <tbody>\n      <ng-container *ngIf=\"rows.length\">\n        <ng-container *ngFor=\"let row of rows; trackBy: rowTracker\">\n          <tr [ngClass]=\"{'table-primary': isRowSelected(row)}\">\n            <td class=\"align-middle\" *ngIf=\"selectable\">\n              <ngb-checkbox [checked]=\"isRowSelected(row)\" (checkChange)=\"toggleRowSelection(row)\"></ngb-checkbox>\n            </td>\n            <ng-container *ngTemplateOutlet=\"bodyRowTemplate; context: { $implicit: row }\"></ng-container>\n          </tr>\n        </ng-container>\n        <ng-container *ngFor=\"let footerRowTemplate of footerRowTemplates\">\n          <tr>\n            <td *ngIf=\"selectable\"></td><!-- empty table cell to fill no checkbox space -->\n            <ng-container *ngTemplateOutlet=\"footerRowTemplate.templateRef\"></ng-container>\n          </tr>\n        </ng-container>\n      </ng-container>\n    </tbody>\n\n  </table>\n\n  <div class=\"card-footer\" *ngIf=\"footerTemplate\">\n    <ng-container *ngTemplateOutlet=\"footerTemplate\"></ng-container>\n  </div>\n\n</div>",
+                        template: "<div class=\"card ngbTableRoot\" [ngClass]=\"{'border-primary': selectedRowsIds.length }\">\n  <div class=\"card-header\" [ngClass]=\"{'bg-primary text-light': selectedRowsIds.length && selectActionsHeaderTemplate}\"\n    *ngIf=\"headerTemplate\">\n    <ng-container *ngIf=\"selectedRowsIds.length && selectActionsHeaderTemplate; else noRowsSelected\">\n      <ng-container *ngTemplateOutlet=\"selectActionsHeaderTemplate\"></ng-container>\n    </ng-container>\n    <ng-template #noRowsSelected>\n      <ng-container *ngTemplateOutlet=\"headerTemplate\"></ng-container>\n    </ng-template>\n  </div>\n\n  <ng-container *ngFor=\"let subHeaderTemplate of subheaderTemplates\">\n    <div class=\"card-header\">\n      <ng-container *ngTemplateOutlet=\"subHeaderTemplate.templateRef\"></ng-container>\n    </div>\n  </ng-container>\n\n  <table class=\"table table-responsive m-0\">\n\n    <thead>\n      <tr>\n        <th class=\"w-01 align-top\" *ngIf=\"selectable\">\n          <ngb-checkbox [checked]=\"areAllSelectableRowsSelected\" [disabled]=\"!rows.length\" (checkChange)=\"toggleSelectAllRows()\">\n          </ngb-checkbox>\n        </th>\n        <ng-container *ngTemplateOutlet=\"headTemplate\"></ng-container>\n      </tr>\n    </thead>\n\n    <tbody>\n      <ng-container *ngIf=\"rows.length\">\n        <ng-container *ngFor=\"let row of rows; trackBy: rowTracker\">\n          <tr [ngClass]=\"{'table-primary': isRowSelected(row)}\">\n            <td class=\"align-middle\" *ngIf=\"selectable\">\n              <ngb-checkbox\n                [disabled]=\"!canSelectRowPredicate(row)\"\n                [checked]=\"isRowSelected(row)\"\n                (checkChange)=\"toggleRowSelection(row)\"\n              ></ngb-checkbox>\n            </td>\n            <ng-container *ngTemplateOutlet=\"bodyRowTemplate; context: { $implicit: row }\"></ng-container>\n          </tr>\n        </ng-container>\n        <ng-container *ngFor=\"let footerRowTemplate of footerRowTemplates\">\n          <tr>\n            <td *ngIf=\"selectable\"></td><!-- empty table cell to fill no checkbox space -->\n            <ng-container *ngTemplateOutlet=\"footerRowTemplate.templateRef\"></ng-container>\n          </tr>\n        </ng-container>\n      </ng-container>\n    </tbody>\n\n  </table>\n\n  <div class=\"card-footer\" *ngIf=\"footerTemplate\">\n    <ng-container *ngTemplateOutlet=\"footerTemplate\"></ng-container>\n  </div>\n\n</div>",
                         styles: [".w-01{width:1%}"]
                     }] }
         ];
@@ -357,7 +367,8 @@
             headTemplate: [{ type: core.ContentChild, args: [NgbTableHeadDirective, { static: false, read: core.TemplateRef },] }],
             bodyRowTemplate: [{ type: core.ContentChild, args: [NgbTableBodyRowDirective, { static: false, read: core.TemplateRef },] }],
             footerRowTemplates: [{ type: core.ContentChildren, args: [NgbTableFooterRowDirective, { descendants: false },] }],
-            footerTemplate: [{ type: core.ContentChild, args: [NgbTableFooterDirective, { static: false, read: core.TemplateRef },] }]
+            footerTemplate: [{ type: core.ContentChild, args: [NgbTableFooterDirective, { static: false, read: core.TemplateRef },] }],
+            canSelectRowPredicate: [{ type: core.Input }]
         };
         return NgbTableComponent;
     }());

@@ -1,4 +1,4 @@
-import { OnInit, QueryList, EventEmitter } from '@angular/core';
+import { OnInit, QueryList, EventEmitter, Predicate } from '@angular/core';
 import { NgbTableHeaderDirective } from './children-selectors/ngb-table-header.directive';
 import { NgbTableSubheaderDirective } from './children-selectors/ngb-table-subheader.directive';
 import { NgbTableSelectActionsHeaderDirective } from './children-selectors/ngb-table-select-actions-header.directive';
@@ -20,16 +20,17 @@ export declare class NgbTableComponent implements OnInit {
     bodyRowTemplate: NgbTableBodyRowDirective;
     footerRowTemplates: QueryList<NgbTableFooterRowDirective>;
     footerTemplate: NgbTableFooterDirective;
+    canSelectRowPredicate: Predicate<Row>;
     constructor();
     ngOnInit(): void;
     rowTracker: (index: any, row: object) => any;
     isRowSelected(row: Row): boolean;
     selectRow(row: Row): void;
-    selectAllRows(): void;
+    private selectAllSelectableRows;
     unselectRow(row: Row): void;
     unselectAllRows(): void;
     toggleRowSelection(row: Row): void;
     toggleSelectAllRows(): void;
-    readonly areAllRowsSelected: number;
+    readonly areAllSelectableRowsSelected: number;
 }
 export {};

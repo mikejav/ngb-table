@@ -317,3 +317,28 @@ Appears under `ngbTableHeader`. Is not replaced by `ngbTableSelectActionsHeader`
   SubHeader
 </ng-template>
 ```
+
+## Predicates
+You can specify what row can be selected by using `canSelectRowPredicate`.
+If specific row does not pass this predicate it can't be selected and its checkbox will be disabled.
+
+```html
+<ngb-table
+  [rows]="rows"
+  [selectable]="true"
+  [selectedRowsIds]="selectedRowsIds"
++ [canSelectRowPredicate]="onlyNameBarPredicate"
+  (selectedRowsIdsChange)="updateSelectedRows($event)"
+>
+...
+```
+
+```typescript
+import { Predicate } from '@angular/core';
+...
+
+  // your component's class property:
+  onlyNameBarPredicate: Predicate<YourRowDataType> = (row) => {
+    return row.status === 'available';
+  }
+```
