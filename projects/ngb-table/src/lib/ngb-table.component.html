@@ -1,4 +1,4 @@
-<div class="card ngbTableRoot" [ngClass]="{'border-primary': selectedRowsIds.length }">
+<div class="card table-responsive ngbTableRoot" [ngClass]="{'border-primary': selectedRowsIds.length }">
   <div class="card-header" [ngClass]="{'bg-primary text-light': selectedRowsIds.length && selectActionsHeaderTemplate}"
     *ngIf="headerTemplate">
     <ng-container *ngIf="selectedRowsIds.length && selectActionsHeaderTemplate; else noRowsSelected">
@@ -15,7 +15,7 @@
     </div>
   </ng-container>
 
-  <table class="table table-responsive m-0">
+  <table class="table m-0">
 
     <thead>
       <tr>
